@@ -1,0 +1,349 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+/* HTML element (SMACSS base) rules */
+@import "normalize.css";
+
+/* Layout rules */
+@import "layouts/responsive.css";
+
+/* Component (SMACSS module) rules */
+@import "components/misc.css";
+/* Optionally, add your own components here. */
+@import "print.css";
+
+/* SMACSS theme rules */
+/* @import "theme-A.css"; */
+/* @import "theme-B.css"; */
+
+/*  styles */
+/* page styles */
+
+
+
+/* Header styles */
+
+h1, h2, h3, h4, h5, h6 {
+    color: #f77f08;
+    font-family: CodaRegular;
+    font-weight: normal;
+    line-height: 1.2324em;
+    padding-bottom: 0.2412em;
+    text-rendering: optimizelegibility;
+	
+}
+
+.header__site-link span{
+	display:none;
+}
+#header, #hero{
+	width:940px;
+	margin:0 auto;
+	height:120px;
+}
+#header .header__logo-image{
+	margin-top: 15px;
+}
+#cust_nav{
+	float:right;
+	margin-top: 10px;
+}
+#above_content{
+	background: url("/rdi/sites/all/themes/RiverDeltaIndia/images/page-title-bg.png") repeat-x scroll center bottom #777;
+    border-bottom: 3px solid #ddd;
+    border-top: 3px solid #ddd;
+    box-shadow: 0 0 2px #000000;
+    clear: both;
+    margin: 0 auto 20px;
+    min-height: 100px;
+    padding: 0;
+	margin-top:-33px;
+}
+/* First side bar intellect fodder styles */
+aside.sidebars .region.region-sidebar-first.column.sidebar{width: 100%;}
+.sidebars .two-sidebars .region-sidebar-first {
+    float: left;
+    margin-left: 0;
+    margin-right: -20%;
+    width: 100%;
+}
+
+
+.two-sidebars .region-sidebar-second {
+    float: left;
+    width: 100%;
+	margin-left: 5%;
+}
+#content{
+	padding-left: 0px;
+    padding-right: 0px;
+
+}
+#center_content{
+	width:940px;
+	margin:0 auto;
+}
+#content p, pre{
+	text-align:justify;
+}
+#main .breadcrumb a{
+	color: #ccc;
+    display: inline-block;
+    line-height: 21px;
+    text-transform: capitalize;
+    vertical-align: top;
+}
+
+#main .page__title{
+  color: #fff;
+  font-size: 150%;
+  line-height: 50px;
+  margin-left:210px;
+  padding: 0;
+  text-shadow: 2px 2px 0 #000;
+}
+#main .breadcrumb ol {
+    margin-left: 210px;
+    padding-top: 15px;
+}
+/* Header main navigation styles */
+
+#navigation{
+	display:none;
+}
+#block-superfish-1 .block__title{
+	display:none;
+}
+
+
+.tabs-primary, .tabs-secondary{margin:0px !important;}
+.sidebar-second .region-sidebar-second {
+    float:none;
+    margin-left:0%;
+    margin-right:0%;
+    width:auto;
+}
+/* Footer main styles */
+
+#footer_container{
+	background: url("/rdi/sites/all/themes/RiverDeltaIndia/images/page-title-bg.png") repeat scroll center bottom #777;
+    margin: 0 auto;
+    min-height: 246px;
+    padding: 0;
+	
+}
+#footer_wrapper{
+	width:940px;
+	margin:0 auto;
+	height:246px;
+	padding:20px 0 0 0;
+	
+}
+.footer_column{
+	width:460px;
+	height:200px;
+	float:left;	
+}
+#footer .block{margin:0px !important}
+
+#block-quicktabs-footer-links-tabs h2{
+	display:none !important;
+}
+
+.footer_column.last{
+	margin-left:15px;
+	background: url("/rdi/sites/all/themes/RiverDeltaIndia/images/river_delta_india_map.jpg") repeat scroll center bottom #777;
+}
+
+.quicktabs-style-rdi-footer  ul {
+    margin: 1.5em 0;
+	list-style:none;
+	color:#fff;
+	margin-left: -1.5em;
+    margin-top: 0.5em;
+	
+}
+.quicktabs-style-rdi-footer   ul li a {
+   text-decoration:none;	
+  
+}
+.quicktabs-style-rdi-footer  ul li a{
+  
+	color:#ccc;
+}
+/* Left SideBar Intellect Fodder styles */
+
+
+.region-sidebar-first ul.activity-list li {
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #d5d5d5;
+    border-radius: 5px;
+    box-shadow: 0 3px 0 #aaaaaa;
+    margin: 0 0 7px;
+    overflow: hidden;
+    padding: 7px;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease-out 0s;
+    white-space: nowrap;
+	font-size:15px;
+	
+}
+.region-sidebar-first ul.activity-list li a{
+	background: url("/rdi/sites/all/themes/RiverDeltaIndia/images/list-icon-grey.png") no-repeat scroll 0 2px rgba(0, 0, 0, 0);
+    color: #333;
+    padding-left: 20px;
+    transition: all 0.5s ease-out 0s;
+	text-decoration:none;
+	font-size:15px;
+}
+
+
+.region-sidebar-first menu, ol, ul {
+    padding: 0;
+}
+
+
+/*  styles for landing recent post */
+
+
+ h4.highlight-title {
+    line-height: 26px;
+}
+.highlight-title {
+    background: none repeat scroll 0 0 #212121;
+    border-left: 5px solid #2b94dc;
+    color: #fff;
+    font-family: CodaRegular;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px #000000;
+}
+#blog_post  p{
+	margin: 0 0 10px;
+    text-align: justify;
+}
+#blog_post .views-more-link {
+    background: none repeat scroll 0 0 #000;
+    border-left: 5px solid #2b94dc;
+    color: #fff;
+    font-size: 12px;
+    line-height: normal;
+    padding: 5px 10px;
+    transition: all 0.3s ease 0s;
+}
+#blog_post a, a:visited {
+    line-height: inherit;
+    outline: 0 none;
+    text-decoration: none;
+}
+.views-field.views-field-field-featured-image {
+    float: left;
+    width: 25%;
+}
+.views-field.views-field-body {
+    width: 99%;
+}
+
+/*************Company Menu About Us styling *******************/
+
+.field .field-label {
+    font-weight: bold;
+	display:none;
+}
+
+
+
+#block-menu-menu-company .menu__item.is-leaf{
+	list-style:none;
+}
+
+#block-menu-menu-company ul{
+	
+	border: medium none;
+    list-style: outside none none;
+    text-align: left;
+	
+}
+
+#block-menu-menu-company .menu li {
+	
+	background: url("/rdi/sites/all/themes/RiverDeltaIndia/images/side-menu-sep.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+    list-style: outside none none;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-top: 1px !important;
+    position: relative;
+}
+
+#block-menu-menu-company .menu li a{
+	background:url("/rdi/sites/all/themes/RiverDeltaIndia/images/sub-menu-icon.png")no-repeat scroll 8px 5px rgba(0, 0, 0, 0);
+	border-left: 5px solid #f4f4f4;
+    color: #555;
+	display: block;
+    font-size: 90%;
+    line-height: 35px;
+    text-indent: 40px;
+    transition: all 0.2s ease 0s;
+	text-decoration:none;
+	
+}
+#block-menu-menu-company .menu li a.active,#block-menu-menu-company .menu li a:hover{
+	background:url("/rdi/sites/all/themes/RiverDeltaIndia/images/sub-menu-icon-hover.png")no-repeat scroll 8px 5px rgba(0, 0, 0, 0);
+	display: block;
+    border-left: 5px solid #2b94dc;
+    border-right: 1px solid #2b94dc;
+    color: #2b94dc;
+}
+
+/*************Company Menu Products styling *******************/ 
+
+
+#block-menu-menu-products .menu__item.is-leaf{
+	list-style:none;
+}
+
+#block-menu-menu-products ul{
+	
+	border: medium none;
+    list-style: outside none none;
+    text-align: left;
+	
+}
+
+#block-menu-menu-products .menu li {
+	
+	background: url("/rdi/sites/all/themes/RiverDeltaIndia/images/side-menu-sep.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+    list-style: outside none none;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-top: 1px !important;
+    position: relative;
+}
+
+#block-menu-menu-products .menu li a{
+	background:url("/rdi/sites/all/themes/RiverDeltaIndia/images/sub-menu-icon.png")no-repeat scroll 8px 5px rgba(0, 0, 0, 0);
+	border-left: 5px solid #f4f4f4;
+    color: #555;
+	display: block;
+    font-size: 90%;
+    line-height: 35px;
+    text-indent: 40px;
+    transition: all 0.2s ease 0s;
+	text-decoration:none;
+	
+}
+#block-menu-menu-products .menu li a.active,#block-menu-menu-products .menu li a:hover{
+	background:url("/rdi/sites/all/themes/RiverDeltaIndia/images/sub-menu-icon-hover.png")no-repeat scroll 8px 5px rgba(0, 0, 0, 0);
+	display: block;
+    border-left: 5px solid #2b94dc;
+    border-right: 1px solid #2b94dc;
+    color: #2b94dc;
+}

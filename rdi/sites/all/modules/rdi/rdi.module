@@ -1,0 +1,29 @@
+<?php
+
+/**
+
+ * Implements hook_jcarousel_skin_info().
+
+ */
+
+ 
+
+function rdi_jcarousel_skin_info() {
+
+  $skins = array();
+
+ 
+
+  $skins['rdi_jcarousel_skin'] = array(
+
+    'title' => t('RDI Jcarousel Skin'),
+
+    'file' => 'skins/rdi_jcarousel_skin/rdi_jcarousel_skin.css',
+
+  );
+
+  
+
+  return $skins;
+
+}

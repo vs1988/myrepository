@@ -1,0 +1,121 @@
+<?php
+
+function custom_contact_menu(){
+ $items = array();
+	 $items['custom_contact'] = array(
+		'title' => t('Applied Job Lists'),
+		'page callback' => 'custom_contact',		
+		'access callback' => TRUE,
+	);
+	 $items['custom_contact/job-applied'] = array(
+		'title' => t(''),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('custom_contact_form'),
+		'access callback' => TRUE,
+		'file' => 'custom_contact.inc',
+	);
+	$items['custom_contact/delete/%'] = array(
+		'title' => t('Delete Job'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('custom_contact_delete_confirm', 2),
+		'access callback' => TRUE,
+		'type' => MENU_CALLBACK, 
+	);
+	$items['custom_contact/edit/%'] = array(
+		'title' => t('Edit Job'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('custom_contact_edit_confirm', 2),
+	    'access callback' => TRUE,
+		'type' => MENU_NORMAL_ITEM,
+    );
+ return $items;
+}
+
+
+function custom_contact_list() {
+	
+	$header = array('CODE','NAME','OBJECT TYPE',' ');
+	$results = db_query("SELECT code,name,object_type FROM {products}");
+	$rows = array();
+	foreach($results as $key) {
+		$code = $key->code;
+		$name = $key->name;
+		$object_type = $key->object_type;
+	  $rows[] = array($code,$name,$object_type,"<a href='products_form/edit/{$key->code}'>" . t('Edit') . "</a> | <a href='products_form/delete/{$key->code}'>" . t('Delete') . "</a>");
+	}
+	return theme('table', array('header' => $header, 'rows' => $rows));
+}
+
+function custom_contact_delete_confirm($form ,&$form_state, $product_code) {
+$form['_product'] = array(
+		'#type' => 'value',
+		'#value' => $product_code,);
+
+
+		drupal_set_message($product_code);
+
+
+return confirm_form($form,t('Are you sure you want to delete '.$product_code.' Product?'),
+    	isset($_GET['destination']) ? $_GET['destination'] : "products_form",t('This action cannot be undone.'),t('Delete'),t('Cancel'));
+
+
+}
+
+function custom_contact_delete_confirm_submit($form, &$form_state) {
+	$form_values = $form_state['values'];
+ if ($form_state['values']['confirm']) {
+$products = $form_state['values']['_product'];
+               drupal_set_message(t('Product ' .$products.' will get deleted.'));
+		                        
+                    $result = db_query("DELETE FROM {products} where code='{$products}'");
+ drupal_set_message(t('Products has been deleted successfully.'));}
+ drupal_goto("products_form");
+}
+
+function custom_contact_edit_confirm($form ,&$form_state, $product_code){
+drupal_set_message($product_code);
+$code = '';$name='';$object_type='';
+$results = db_query("SELECT code,name,object_type FROM {products} WHERE code='{$product_code}'");
+	foreach($results as $key) {
+		$code = $key->code;
+		$name = $key->name;
+		$object_type = $key->object_type;
+	}
+$form = array();
+
+
+	$form['code']=array(
+			'#title'=>t('CODE'),
+			'#type'=>'textfield',
+			'#default_value' => $code,);
+	$form['name']=array(
+			'#title'=>t('NAME'),
+			'#type'=>'textfield',
+			'#default_value' => $name,);
+	$form['object_type']=array(
+			'#title'=>t('OBJECT TYPE'),
+			'#type'=>'textfield',
+			'#default_value' => $object_type,);
+
+
+	return confirm_form($form,t(''),
+			isset($_GET['destination']) ? $_GET['destination'] : "products_form",
+			t(''),t('Edit'),t('Cancel'));
+}
+
+
+function custom_contact_edit_confirm_submit($form, &$form_state)
+{
+$form_values = $form_state['values'];
+if ($form_state['values']['confirm']) {
+    
+	$code = $form_state['values']['code'];
+    $name = $form_state['values']['name'];
+    $object_type= $form_state['values']['object_type'];
+
+
+	$rs = db_query("UPDATE  {products} SET name= '$name', object_type = '$object_type' WHERE  code='{$code}'");
+	 drupal_set_message(t('Products has been updated successfully.'));
+	 }
+	drupal_goto("custom_contact_form");
+}

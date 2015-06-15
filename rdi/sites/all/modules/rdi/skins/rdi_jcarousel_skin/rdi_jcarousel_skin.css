@@ -1,0 +1,152 @@
+
+/**
+ * A simple sample carousel skin.
+ *
+ * This skin includes a sample arrows.svg file that may be edited with the free
+ * illustration application InkScape (http://inkscape.org).
+ *
+ * CSS and icons by Nathan Haug.
+ */
+
+.rdi_jcarousel_skin {
+  text-align: center;
+}
+
+.rdi_jcarousel_skin .jcarousel-container-horizontal {
+  width: 440px;
+  height: 102px;
+  padding: 20px 40px;
+  margin: auto;
+}
+
+.rdi_jcarousel_skin .jcarousel-container-vertical {
+  width: 102px;
+  height: 440px;
+  padding: 40px 20px;
+  margin: auto;
+}
+
+.rdi_jcarousel_skin .jcarousel-clip-horizontal {
+  width: 440px;
+  overflow: hidden;
+}
+
+.rdi_jcarousel_skin .jcarousel-clip-vertical {
+  height: 440px;
+  overflow: hidden;
+}
+
+.rdi_jcarousel_skin .jcarousel-item {
+  padding: 0;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border: 1px solid #CCC;
+  list-style: none;
+  background: #fff none;
+}
+
+.rdi_jcarousel_skin .jcarousel-item-horizontal {
+  margin: 0 4px;
+}
+
+.rdi_jcarousel_skin .jcarousel-item-vertical {
+  margin: 4px 0;
+}
+
+.rdi_jcarousel_skin .jcarousel-item-placeholder {
+  background: #fff url(throbber.gif) no-repeat center center;
+  color: #000;
+}
+
+/**
+ * Buttons
+ */
+.rdi_jcarousel_skin .jcarousel-next,
+.rdi_jcarousel_skin .jcarousel-prev {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url(arrows.png);
+}
+
+.rdi_jcarousel_skin .jcarousel-next-disabled,
+.rdi_jcarousel_skin .jcarousel-prev-disabled {
+  display: none;
+}
+
+/**
+ * Horizontal Buttons
+ */
+.rdi_jcarousel_skin .jcarousel-prev-horizontal {
+  position: absolute;
+  top: 55px;
+  left: 10px;
+  background-position: 0 0;
+}
+.rdi_jcarousel_skin .jcarousel-prev-horizontal:hover {
+  background-position: -32px 0;
+}
+.rdi_jcarousel_skin .jcarousel-prev-horizontal:active {
+  background-position: -64px 0;
+}
+
+.rdi_jcarousel_skin .jcarousel-next-horizontal {
+  position: absolute;
+  top: 55px;
+  right: 10px;
+  background-position: 0 -32px;
+}
+.rdi_jcarousel_skin .jcarousel-next-horizontal:hover {
+  background-position: -32px -32px;
+}
+.rdi_jcarousel_skin .jcarousel-next-horizontal:active {
+  background-position: -64px -32px;
+}
+
+/**
+ * Vertical Buttons
+ */
+.rdi_jcarousel_skin .jcarousel-prev-vertical {
+  position: absolute;
+  top: 10px;
+  left: 55px;
+  background-position: 0 -64px;
+}
+.rdi_jcarousel_skin .jcarousel-prev-vertical:hover {
+  background-position: -32px -64px;
+}
+.rdi_jcarousel_skin .jcarousel-prev-vertical:active {
+  background-position: -64px -64px;
+}
+
+.rdi_jcarousel_skin .jcarousel-next-vertical {
+  position: absolute;
+  bottom: 10px;
+  left: 55px;
+  background-position: 0 -96px;
+}
+.rdi_jcarousel_skin .jcarousel-next-vertical:hover {
+  background-position: -32px -96px;
+}
+.rdi_jcarousel_skin .jcarousel-next-vertical:active {
+  background-position: -64px -96px;
+}
+
+.rdi_jcarousel_skin .jcarousel-navigation {
+  margin: 0;
+  padding: 0;
+}
+
+.rdi_jcarousel_skin .jcarousel-navigation li {
+  display: inline;
+  margin: 0 2px 0 0;
+  padding: 0;
+  background: none;
+}
+
+.rdi_jcarousel_skin .jcarousel-navigation li.active a {
+  font-weight: bold;
+  text-decoration: none;
+}
+

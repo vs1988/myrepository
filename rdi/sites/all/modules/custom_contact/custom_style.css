@@ -1,0 +1,29 @@
+#personal_details div
+{
+	float:left;
+}
+ 
+#job_details .form-item-job_applied, #job_details .form-item-fullname
+{
+	width:115px;
+}
+ 
+#edit-job_applied, #edit-fullname
+{
+	width:100px;
+}
+ 
+#job_details .form-item-age
+{
+	width:50%;
+}
+ 
+#edit-age
+{
+	width:35px;
+}
+/*
+.fieldset-wrapper .form-item{float:left; width:50%;}
+.fieldset-wrapper input.form-text, textarea.form-textarea, select.form-select{width:90% !important;}
+.fieldset-wrapper input.form-text, textarea.form-textarea, select.form-select{resize:none !important;}*/
+ 

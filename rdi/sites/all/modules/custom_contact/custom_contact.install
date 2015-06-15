@@ -1,0 +1,169 @@
+<?php
+
+function custom_contact_schema()
+{
+	
+ $schema['job_contact'] = array(
+    'description' => t('The base table for job.'),
+    'fields' => array(
+	
+      'cid' => array(
+        
+        'type' => 'serial',
+		'length' => 5,
+        'not null' => TRUE,
+		'unsigned' => TRUE,
+		),
+		
+	  'job_applied' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+		
+	  'fullname' => array(
+    
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+		
+	  'age' => array(
+        
+        'type' => 'int',
+        'length' => 20,
+       
+        ),	
+		
+      'gender' => array(
+        
+        'type' => 'varchar',
+        'length' => 20,
+       
+       ),
+	  
+	  'location' => array(
+        
+        'type' => 'varchar',
+        'length' => 255,
+       
+      ),
+	  
+	  'contact_phone' => array(
+        
+        'type' => 'varchar',
+        'length' => 255,
+       
+      ),
+	  
+	  'contact_email' => array(
+        
+        'type' => 'varchar',
+        'length' => 255,
+       
+      ),
+	  
+	  'qualification' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+       
+	  'experience' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+		
+	  'employment_seeking' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+		
+	  'technical_skill' => array(
+        
+        'type' => 'varchar',
+        'length' => 255,
+       
+		),
+        
+	  'personal_attributes' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+		
+      'projects_done' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+       
+	   'roles' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+		
+      'current_comp_feel' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+	   
+      'colleague_view_for_u' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+	  
+	  'job_change_reason' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+		
+	  'shift_agree' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),
+		
+	  'family_background' => array(
+        
+        'type' => 'varchar',
+		'length' => 255,
+       
+		),	
+	  'resume_url' => array(
+        
+        'type' => 'varchar',
+        'length' => 255,
+        
+		)
+        
+      ),
+   
+    'primary key' => array('cid'),
+    );
+	
+	 return $schema;
+}
+function custom_contact_uninstall_schema($module) {
+ 
+  if (db_table_exists($table ['job_contact'])) {
+      db_drop_table($table ['job_contact']);
+    }
+}

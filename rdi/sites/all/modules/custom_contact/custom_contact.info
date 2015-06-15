@@ -1,0 +1,7 @@
+
+name = Contact For Job 
+description = This is customzation.
+core = 7.x
+package = All Custom Module
+
+stylesheets[all][] = custom_style.css

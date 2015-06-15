@@ -1,0 +1,58 @@
+
+.quicktabs_wrapper.quicktabs-style-rdi-footer {
+  margin: 0;
+  width: 100%;
+  display: block;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+ 
+}
+
+ul.quicktabs-tabs.quicktabs-style-rdi-footer {
+    float: left;
+    font-size: 1em;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    width: 190px;
+
+
+}
+ul.quicktabs-tabs.quicktabs-style-rdi-footer li {
+  display: block;
+  margin-right: 0;
+  padding:0;
+
+}
+ul.quicktabs-tabs.quicktabs-style-rdi-footer li a {
+  display: block;
+  color: #ccc;
+  text-align: left;
+  text-decoration: none;
+  margin: 0;
+  padding: 7px;
+  height: 23px;
+  font-weight: normal;
+  transition: all 0.3s ease 0s;
+}
+ul.quicktabs-tabs.quicktabs-style-rdi-footer li.active {
+  background:  none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+ }
+ul.quicktabs-tabs.quicktabs-style-rdi-footer li.active a {
+  color: #67686C;
+  font-weight: bold;
+     
+}
+
+.quicktabs_main.quicktabs-style-rdi-footer {
+  float: left;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 1;
+  width: 265px;
+  margin: 0 0 0 195px;
+  min-height: 200px;
+  padding: 0px;
+  font-size: 0.923em;
+  
+   
+}
