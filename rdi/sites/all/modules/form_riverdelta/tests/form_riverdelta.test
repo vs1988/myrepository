@@ -1,0 +1,42 @@
+<?php
+/**
+ * @file
+ * Test file for form_riverdelta module.
+ */
+
+/**
+ * Default test case for the form_riverdelta module.
+ *
+ * @ingroup form_riverdelta
+ */
+class FormExampleTestCase extends DrupalWebTestCase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'RiverDelta Required Form Example',
+      'description' => 'Various tests on the form_riverdelta module.' ,
+      'group' => 'RiverDelta',
+    );
+  }
+
+  /**
+   * Enable modules.
+   */
+  public function setUp() {
+    parent::setUp('form_riverdelta');
+  }
+
+  /**
+   * Test each tutorial.
+   */
+  public function testRequired() {
+    $this->drupalPost('form_riverdelta',array('first' => t('Name')), t('Submit'));
+	$this->drupalPost('form_riverdelta',array('usersname' => t('Name')), t('Submit'));
+
+    $this->drupalPost('form_riverdelta', array(''), t('Submit'));
+    $this->assertText(t('Name field is required'));
+ }
+}

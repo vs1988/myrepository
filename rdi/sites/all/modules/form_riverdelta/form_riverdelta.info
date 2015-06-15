@@ -1,0 +1,12 @@
+name = River Delta Form example
+description =River Delta Examples of using the Drupal Form API.
+package = River Delta modules
+core = 7.x
+files[] = tests/form_riverdelta.test
+testing_api = 2.x
+; Information added 12-06-2015
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "RiverDelta"
+datestamp = "1426097283"
+
